@@ -12,6 +12,9 @@ namespace Assets.Code
 		
 		private Vector3 _direction;
 		
+		private AsteroidManager _asteroidManager;
+		private Destroyable _destroyable;
+		
 		public int Level { get; private set; }
 		
 		public float DistanceSquared { get; private set; }
@@ -22,6 +25,8 @@ namespace Assets.Code
 		
 		public void Awake()
 		{
+			_asteroidManager = (AsteroidManager)FindObjectOfType<AsteroidManager>();
+			_destroyable = GetComponent<Destroyable>();
 		}
 		
 		public void UpdatePlayerPosition(Vector3 playerPosition)
@@ -56,6 +61,7 @@ namespace Assets.Code
 			transform.localScale = scale;
 			
 			Level = (int)Mathf.Ceil((scale.magnitude - 25.0f) / 255.0f * (MaxLevel - 1)) + 1;
+			_destroyable.MaxHealth = _destroyable.Health = (Level * 100);
 			
 			_direction = direction;
 			_velocity = velocity;
@@ -83,6 +89,20 @@ namespace Assets.Code
 			gameObject.SetActive(false);
 		}
 		
+		public void Destroyed(GameObject from)
+		{
+			_asteroidManager.AsteroidDestroyed(this);
+		}
 		
+		public void OnTriggerEnter(Collider collision)
+		{
+			var destroyable = collision.gameObject.FindComponent<Destroyable>();
+			if(destroyable == null)
+			{
+				return;
+			}
+			
+			destroyable.TakeDamage (Level * 50, gameObject);
+		}
 	}
 }
