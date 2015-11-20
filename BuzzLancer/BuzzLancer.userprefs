@@ -1,24 +1,25 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/Asteroid.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/Targetable.cs">
     <Files>
-      <File FileName="Assets/Code/Destroyable.cs" Line="20" Column="27" />
+      <File FileName="Assets/Code/Asteroid.cs" Line="1" Column="1" />
+      <File FileName="Assets/Code/Destroyable.cs" Line="1" Column="1" />
       <File FileName="Assets/Code/BasicWeapon.cs" Line="1" Column="1" />
       <File FileName="Assets/Code/Player.cs" Line="1" Column="1" />
       <File FileName="Assets/Code/PlayerCamera.cs" Line="1" Column="1" />
       <File FileName="Assets/Code/PlayerController.cs" Line="1" Column="1" />
       <File FileName="Assets/Code/ProgressBar.cs" Line="1" Column="1" />
       <File FileName="Assets/Code/ProgressBarRenderer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/GameResources.cs" Line="1" Column="1" />
+      <File FileName="Assets/Code/GameResources.cs" Line="9" Column="90" />
       <File FileName="Assets/Code/PlayerGUI.cs" Line="1" Column="1" />
       <File FileName="Assets/Code/ProjectileWeapon.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/Projectile.cs" Line="32" Column="4" />
+      <File FileName="Assets/Code/Projectile.cs" Line="1" Column="1" />
       <File FileName="Assets/Code/BasicWeaponMount.cs" Line="1" Column="1" />
       <File FileName="Assets/Code/PlayerWeapons.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/Asteroid.cs" Line="104" Column="4" />
-      <File FileName="Assets/Code/AsteroidManager.cs" Line="111" Column="41" />
-      <File FileName="Assets/Code/ColliderProxy.cs" Line="1" Column="19" />
-      <File FileName="Assets/Code/GameExtensions.cs" Line="24" Column="17" />
+      <File FileName="Assets/Code/AsteroidManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Code/ColliderProxy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Code/GameExtensions.cs" Line="1" Column="1" />
+      <File FileName="Assets/Code/Targetable.cs" Line="37" Column="132" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
