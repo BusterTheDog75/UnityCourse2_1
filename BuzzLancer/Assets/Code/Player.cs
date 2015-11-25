@@ -21,6 +21,12 @@ namespace Assets.Code
 		
 		public float MaxHealth { get { return Destroyable.MaxHealth; } }
 		
+		public float MinimumVelocity
+		{ 
+						get { return _controller.MinimumVelocity; }
+						set { _controller.MinimumVelocity = value; } 
+		}
+		
 		public void Awake()
 		{
 			_camera = new PlayerCamera(this, Camera);
