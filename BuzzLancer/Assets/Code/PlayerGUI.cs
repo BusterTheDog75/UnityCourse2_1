@@ -9,6 +9,9 @@ namespace Assets.Code
 		
 		private readonly ProgressBar _velocityProgressBar;
 		private readonly ProgressBar _healthProgressBar;
+		private readonly ProgressBar _timeProgressBar;
+		
+		private readonly LevelManager _levelManager;
 		
 		public float CurrentCursorSize { get; private set; }
 		
@@ -16,6 +19,7 @@ namespace Assets.Code
 		{
 			_controller = controller;
 			_player = player;
+			_levelManager = (LevelManager)Object.FindObjectOfType<LevelManager>();
 			
 			_velocityProgressBar = new ProgressBar
 			{
@@ -33,6 +37,14 @@ namespace Assets.Code
 				ForegroundColor = new Color(194.0f/255.0f, 62.0f/255.0f, 62.0f/255.0f)
 			};
 			
+			_timeProgressBar = new ProgressBar
+			{
+				Size = new Vector2(Screen.width/2, 10),
+				Position = new Vector2(((Screen.width/2) - (Screen.width /4)), 10),
+				BackgroundColor = new Color(247.0f/255.0f, 247.0f/255.0f, 213.0f/255.0f),
+				ForegroundColor = new Color(247.0f/255.0f, 244.0f/255.0f, 32.0f/255.0f)
+			};
+			
 			CurrentCursorSize = 20;
 		}
 		
@@ -43,10 +55,14 @@ namespace Assets.Code
 			
 			_healthProgressBar.MaxValue = _player.MaxHealth;
 			_healthProgressBar.Value = _player.Health;
+			_timeProgressBar.MaxValue = Mathf.Max (_timeProgressBar.MaxValue, _levelManager.TimeLeft);
+			_timeProgressBar.Value = _levelManager.TimeLeft;
 		}
 		
 		public void OnGUI()
 		{
+			GUI.Label (new Rect(10, 10, 200, 40), string.Format("{0} points", GameManagerInstance.Instance.Points));
+			
 			GUI.DrawTexture (
 				new Rect(
 					_controller.MousePosition.x - (CurrentCursorSize / 2.0f),

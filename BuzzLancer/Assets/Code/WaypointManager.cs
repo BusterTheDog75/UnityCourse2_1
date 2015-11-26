@@ -11,6 +11,8 @@ namespace Assets.Code
 		
 		private Player _player;
 		
+		private LevelManager _levelManager;
+		
 		
 		// Use this for initialization
 		public void Start ()
@@ -25,10 +27,13 @@ namespace Assets.Code
 			}
 			
 			_player = (Player)FindObjectOfType<Player>();
+			_levelManager = (LevelManager)FindObjectOfType<LevelManager>();
 		}
 		
 		public void PlayerHitWaypoint (Waypoint waypoint)
 		{
+			_levelManager.WaypointHitByPlayer(waypoint);
+			
 			_player.MinimumVelocity = waypoint.MinimumVelocity;
 			
 			waypoint.Deactivate();

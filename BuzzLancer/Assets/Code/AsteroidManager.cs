@@ -10,6 +10,7 @@ namespace Assets.Code
 		private List<Asteroid> _asteroids;
 		private Player _player;
 		
+		private LevelManager _levelManager;
 		
 		public Asteroid AsteroidPrefab;
 		
@@ -20,6 +21,8 @@ namespace Assets.Code
 		{
 			_asteroids = new List<Asteroid>();
 			_player = (Player)FindObjectOfType<Player>();
+			
+			_levelManager = (LevelManager)FindObjectOfType<LevelManager>();
 			
 			
 		}
@@ -118,6 +121,8 @@ namespace Assets.Code
 		
 		public void AsteroidDestroyed(Asteroid asteroid)
 		{
+			_levelManager.AsteroidDestroyedByPlayer(asteroid);
+			
 			asteroid.Deactivate();
 			
 			if(asteroid.Level <= 3)
