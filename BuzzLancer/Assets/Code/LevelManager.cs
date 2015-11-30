@@ -30,6 +30,8 @@ namespace Assets.Code
 		{
 			if(waypoint.Next == null)
 			{
+				GameManagerInstance.Instance.Points += (int)Mathf.Ceil(TimeLeft) * 10;
+				
 				if(!string.IsNullOrEmpty(NextLevel))
 				{
 					if(GameManagerInstance.Instance.IsDebug)
