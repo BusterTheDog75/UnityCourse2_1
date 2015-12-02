@@ -15,6 +15,8 @@ namespace Assets.Code
 		private AsteroidManager _asteroidManager;
 		private Destroyable _destroyable;
 		
+		public GameObject Effect;
+		
 		public int Level { get; private set; }
 		
 		public float DistanceSquared { get; private set; }
@@ -91,6 +93,8 @@ namespace Assets.Code
 		
 		public void Destroyed(GameObject from)
 		{
+			Instantiate (Effect, transform.position, transform.rotation);
+			
 			_asteroidManager.AsteroidDestroyed(this);
 		}
 		

@@ -8,6 +8,8 @@ namespace Assets.Code
 		private Vector3 _direction;
 		private ProjectileWeapon _weapon;
 		
+		public GameObject Effect;
+		
 		public void Init(ProjectileWeapon weapon, Vector3 direction)
 		{
 			_weapon = weapon;
@@ -38,6 +40,9 @@ namespace Assets.Code
 			}
 			
 			destroyable.TakeDamage(_weapon.Damage, gameObject);
+			
+			Instantiate (Effect, transform.position, transform.rotation);
+			
 			Destroy (gameObject);
 		}
 	}
