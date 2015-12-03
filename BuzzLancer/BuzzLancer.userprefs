@@ -1,22 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/Asteroid.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/EndScreen.cs">
     <Files>
-      <File FileName="Assets/Code/Asteroid.cs" Line="97" Column="4" />
-      <File FileName="Assets/Code/GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/GameManagerInstance.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/LevelManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/WaypointManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/AsteroidManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/PlayerGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/Player.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/StartScreen.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/EndScreen.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/HighScore.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/HighScoreManager.cs" Line="43" Column="12" />
-      <File FileName="Assets/Code/HighScoreScreen.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/Projectile.cs" Line="45" Column="4" />
-      <File FileName="Assets/Code/AutoDestroyParticleSystem.cs" Line="13" Column="17" />
+      <File FileName="Assets/Code/StartScreen.cs" Line="38" Column="24" />
+      <File FileName="Assets/Code/HighScoreScreen.cs" Line="36" Column="77" />
+      <File FileName="Assets/Code/EndScreen.cs" Line="77" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
