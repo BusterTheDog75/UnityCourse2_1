@@ -6,6 +6,8 @@ namespace Assets.Code
 	{
 		public Projectile Prefab;
 		
+		public AudioClip Sound;
+		
 		public float 
 				Speed,
 				Damage,
@@ -20,6 +22,8 @@ namespace Assets.Code
 			{
 				return;
 			}
+			
+			AudioSource.PlayClipAtPoint(Sound, position, 0.4f);
 			
 			var projectile = (Projectile)Instantiate (Prefab, position, Quaternion.identity);
 			projectile.Init (this, direction);

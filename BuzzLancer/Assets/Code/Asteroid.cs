@@ -5,6 +5,8 @@ namespace Assets.Code
 {
 	public class Asteroid : MonoBehaviour
 	{
+		public AudioClip ExplosionClip;
+		
 		private const int MaxLevel = 6;
 		
 		private float _alpha;
@@ -93,6 +95,12 @@ namespace Assets.Code
 		
 		public void Destroyed(GameObject from)
 		{
+			var source = GameExtensions.PlayClipAtPoint(transform.position, ExplosionClip);
+			if(source)
+			{
+				source.rolloffMode = AudioRolloffMode.Linear;
+			}
+			
 			Instantiate (Effect, transform.position, transform.rotation);
 			
 			_asteroidManager.AsteroidDestroyed(this);

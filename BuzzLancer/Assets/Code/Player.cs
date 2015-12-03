@@ -9,6 +9,8 @@ namespace Assets.Code
 		public Camera Camera;
 		public Destroyable Destroyable;
 		public BasicWeapon BasicWeapon;
+		
+		public AudioSource EngineAudio;
 	
 		private PlayerCamera _camera;
 		private PlayerController _controller;
@@ -59,6 +61,9 @@ namespace Assets.Code
 			_playerGUI.Update();
 			_camera.Update();
 			_weapons.Update();
+			
+			EngineAudio.pitch = _controller.CurrentVelocity/(_controller.MinimumVelocity + _controller.MaxVariableVelocity + _controller.AfterburnerModifier);
+			
 		}
 		
 		public void OnGUI()
